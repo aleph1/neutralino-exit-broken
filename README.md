@@ -1,17 +1,11 @@
-# neutralinojs-minimal
+# Illustrates bug with Neutralino.app.exit() on Mac
 
-The default template for a Neutralinojs app. It's possible to use your favorite frontend framework by using [these steps](https://neutralino.js.org/docs/how-to/use-a-frontend-library).
+## Describe the bug
+The neutralinojs application should exit, but nothing happens.
 
-## Contributors
+## To Reproduce
+Steps to reproduce the behavior:
 
-<a href="https://github.com/neutralinojs/neutralinojs-minimal/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=neutralinojs/neutralinojs-minimal" />
-</a>
-
-## License
-
-[MIT](LICENSE)
-
-## Icon credits
-
-- `trayIcon.png` - Made by [Freepik](https://www.freepik.com) and downloaded from [Flaticon](https://www.flaticon.com)
+1. On a Mac, clone a bare bones example neutralinojs app that creates “exit” and “exit and kill” buttons https://github.com/aleph1/neutralino-exit-broken
+2. Click the exit button, Neutralino.app.exit() is called but the app does not exit.
+3. Click the exit and kill button, Neutralino.app.exit() is called followed by Neutralino.app.killProcess() but the app does not exit.
